@@ -9,12 +9,12 @@
 docs_dir = "docs"
 site_dir = "site"
 
-site_name = "Documentation"
-site_description = "A new project generated from the default template project."
-site_author = "<your name here>"
+site_name = "ArcGIS DSC Single Machine"
+site_description = "Automation and documentation for ArcGIS Enterprise single-machine deployment with ArcGIS PowerShell DSC."
+site_author = "Joel McCune"
 
 copyright = """
-Copyright &copy; 2026 The authors
+Copyright &copy; 2026 Joel McCune
 """
 
 [project.theme]
@@ -53,3 +53,7 @@ toggle.name = "Switch to light mode"
 [project.markdown_extensions.abbr]
 [project.markdown_extensions.admonition]
 [project.markdown_extensions.attr_list]
+[project.markdown_extensions.pymdownx.snippets]
+base_path = ["."]
+encoding = "utf-8-sig"
+check_paths = true

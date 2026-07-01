@@ -1,4 +1,4 @@
-﻿# ArcGIS Enterprise Single-Machine Deployment
+# ArcGIS Enterprise Single-Machine Deployment
 
 This repository automates ArcGIS Enterprise deployment on a single Windows machine using ArcGIS PowerShell DSC.
 
