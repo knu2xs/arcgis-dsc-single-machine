@@ -1,0 +1,15 @@
+# Path Configuration for ArcGIS Deployment
+# Modify these paths when moving the project to a different directory
+
+ARCGIS_VERSION: 11.5
+ARCGIS_DSC_ZIP_URL: https://github.com/Esri/arcgis-powershell-dsc/archive/refs/tags/v5.1.0.zip
+
+PORTAL_DATA_DIR: C:\arcgis\portal
+DATASTORE_DATA_DIR: C:\arcgis\datastore
+SERVER_DATA_DIR: C:\arcgis\server
+
+# Installation directories (can stay fixed or be made flexible)
+ARCGIS_SERVER_INSTALL_DIR: C:\Program Files\ArcGIS\Server
+ARCGIS_PORTAL_INSTALL_DIR: C:\Program Files\ArcGIS\Portal
+ARCGIS_PORTAL_CONTENT_DIR: C:\arcgis\portal
+ARCGIS_DATASTORE_INSTALL_DIR: C:\Program Files\ArcGIS\DataStore

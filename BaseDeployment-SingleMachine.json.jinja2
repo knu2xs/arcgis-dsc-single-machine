@@ -1,0 +1,159 @@
+{
+    "AllNodes": [
+        {
+            "NodeName": "{{ MACHINE_NAME }}",
+            "DataStoreTypes": [
+                "Relational",
+                "ObjectStore"
+            ],
+            "Role": [
+                "Server",
+                "Portal",
+                "DataStore",
+                "WebAdaptor"
+            ],
+            "WebAdaptorConfig":[
+                {
+                    "Role": "Portal"
+                },
+                {
+                    "Role": "Server"
+                }
+            ]
+        }
+    ],
+    "ConfigData": {
+        "Version": "{{ ARCGIS_VERSION }}",
+        "ServerContext": "server",
+        "PortalContext": "portal",
+        "ServerRole": "GeneralPurposeServer",
+        "DownloadSetups": false,
+        "DownloadSetupsToSharedPath": false,
+        "DownloadPatches": true,
+        "SkipPatchInstalls": false,
+        "Credentials": {
+            "ServiceAccount": {
+                "UserName": "avworld\\joel5174",
+                "PasswordFilePath": "{{ BASE_DIR }}\\config\\service_account_password.txt",
+                "IsDomainAccount": true,
+                "IsMSAAccount": false
+            }
+        },
+        "Server": {
+            "LicenseFilePath": "{{ BASE_DIR }}\\resources\\authorization_files\\Server_Ent_Adv.ecp",
+            "Installer": {
+                "Path": "{{ BASE_DIR }}\\resources\\software\\ArcGIS_Server_Windows.exe",
+                "VolumePaths": [
+                    "{{ BASE_DIR }}\\resources\\software\\ArcGIS_Server_Windows.exe.001"
+                ],
+                "IsSelfExtracting": true,
+                "InstallDir": "{{ ARCGIS_SERVER_INSTALL_DIR }}",
+                "InstallDirPython": "{{ PYTHON_INSTALL_DIR }}"
+            },
+            "ServerDirectoriesRootLocation": "{{ SERVER_DATA_DIR }}\\directories",
+            "ConfigStoreLocation": "{{ SERVER_DATA_DIR }}\\config-store",
+            "LocalRepositoryPath": "{{ SERVER_DATA_DIR }}\\local",
+            "ServerLogsLocation": "{{ SERVER_DATA_DIR }}\\logs",
+            "ServerDirectories": [
+                {
+                    "name": "arcgiscache",
+                    "physicalPath": "{{ SERVER_DATA_DIR }}\\directories\\arcgiscache",
+                    "directoryType": "CACHE",
+                    "cleanupMode": "NONE",
+                    "maxFileAge": 0
+                },
+                {
+                    "name": "arcgisjobs",
+                    "physicalPath": "{{ SERVER_DATA_DIR }}\\directories\\arcgisjobs",
+                    "directoryType": "JOBS",
+                    "cleanupMode": "TIME_ELAPSED_SINCE_LAST_MODIFIED",
+                    "maxFileAge": 360
+                },
+                {
+                    "name": "arcgisoutput",
+                    "physicalPath": "{{ SERVER_DATA_DIR }}\\directories\\arcgisoutput",
+                    "directoryType": "OUTPUT",
+                    "cleanupMode": "TIME_ELAPSED_SINCE_LAST_MODIFIED",
+                    "maxFileAge": 10
+                },
+                {
+                    "name": "arcgissystem",
+                    "physicalPath": "{{ SERVER_DATA_DIR }}\\directories\\arcgissystem",
+                    "directoryType": "SYSTEM",
+                    "cleanupMode": "NONE",
+                    "maxFileAge": 0
+                }
+            ],
+            "RegisteredDirectories": [
+                {
+                    "name": "BasemapsCacheDir",
+                    "physicalPath": "{{ SERVER_DATA_DIR }}\\additionaldirs\\cache",
+                    "directoryType": "CACHE"
+                },
+                {
+                    "name": "TestOutputDir",
+                    "physicalPath": "{{ SERVER_DATA_DIR }}\\additionaldirs\\testOutput",
+                    "directoryType": "OUTPUT"
+                },
+                {
+                    "name": "TestJobsDir",
+                    "physicalPath": "{{ SERVER_DATA_DIR }}\\additionaldirs\\testJobs",
+                    "directoryType": "JOBS"
+                }
+            ],
+            "PrimarySiteAdmin": {
+                "UserName": "siteadmin",
+                "PasswordFilePath": "{{ BASE_DIR }}\\config\\server_site_admin_password.txt"
+            },
+            "EnableHTTPSOnly": true,
+            "EnableHSTS": true
+        },
+        "Portal": {
+            "LicenseFilePath": "{{ BASE_DIR }}\\resources\\authorization_files\\AllUTs_AllCapabilities.json",
+            "PortalLicenseUserTypeId": "creatorUT",
+            "Installer": {
+                "Path": "{{ BASE_DIR }}\\resources\\software\\Portal_for_ArcGIS_Windows.exe",
+                "VolumePaths": [
+                    "{{ BASE_DIR }}\\resources\\software\\Portal_for_ArcGIS_Windows.exe.001"
+                ],
+                "IsSelfExtracting": true,
+                "WebStylesPath": "{{ BASE_DIR }}\\resources\\software\\Portal_for_ArcGIS_Web_Styles_Windows.exe",
+                "WebStylesInstallerIsSelfExtracting": true,
+                "InstallDir": "{{ ARCGIS_PORTAL_INSTALL_DIR }}",
+                "ContentDir": "{{ ARCGIS_PORTAL_CONTENT_DIR }}"
+            },
+            "ContentDirectoryLocation":"{{ PORTAL_DATA_DIR }}",
+            "EnableAutomaticAccountCreation": true,
+            "DefaultRoleForUser": "org_user",
+            "DefaultUserLicenseTypeIdForUser": "creatorUT",
+            "PortalAdministrator": {
+                "UserName": "portaladmin",
+                "Email": "jmccune@esri.com",
+                "PasswordFilePath": "{{ BASE_DIR }}\\config\\portal_admin_password.txt",
+                "SecurityQuestionIndex": 1,
+                "SecurityAnswer": "vanilla"
+            },
+            "EnableHSTS": true
+        },
+        "DataStore": {
+            "ContentDirectoryLocation": "{{ DATASTORE_DATA_DIR }}",
+            "EnableFailoverOnPrimaryStop": false,
+            "EnablePointInTimeRecovery": false,
+            "Installer": {
+                "Path": "{{ BASE_DIR }}\\resources\\software\\ArcGIS_DataStore_Windows.exe",
+                "IsSelfExtracting": true,
+                "InstallDir": "{{ ARCGIS_DATASTORE_INSTALL_DIR }}",
+                "InstallAllFeatures": false
+            }
+        },
+        "WebAdaptor": {
+            "AdminAccessEnabled": true,
+            "OverrideHTTPSBinding": true,
+            "Installer": {
+                "Path": "{{ BASE_DIR }}\\resources\\software\\ArcGIS_Web_Adaptor_for_Microsoft_IIS.exe",
+                "IsSelfExtracting": true
+            },
+            "WebSiteId": 1
+        }
+    }
+}

@@ -1,0 +1,45 @@
+# Generated Files (regenerate from template + config)
+BaseDeployment-SingleMachine.json
+
+# Password and Secrets (CRITICAL - Never commit!)
+config/secrets/
+**/*password.txt
+*.key
+*.pem
+*.pfx
+
+# Python/Conda Environment
+env/
+.python/
+.cache/
+.miniconda/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Logs
+Logs/
+*.log
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# installation resources
+resources/
