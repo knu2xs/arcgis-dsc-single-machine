@@ -47,7 +47,7 @@
                     "{{ BASE_DIR }}\\resources\\software\\ArcGIS_Server_Windows.exe.001"
                 ],
                 "IsSelfExtracting": true,
-                "InstallDir": "{{ ARCGIS_SERVER_INSTALL_DIR }}",
+                "InstallDir": "{{ SERVER_INSTALL_DIR }}",
                 "InstallDirPython": "{{ PYTHON_INSTALL_DIR }}"
             },
             "ServerDirectoriesRootLocation": "{{ SERVER_DATA_DIR }}\\directories",
@@ -119,8 +119,8 @@
                 "IsSelfExtracting": true,
                 "WebStylesPath": "{{ BASE_DIR }}\\resources\\software\\Portal_for_ArcGIS_Web_Styles_Windows.exe",
                 "WebStylesInstallerIsSelfExtracting": true,
-                "InstallDir": "{{ ARCGIS_PORTAL_INSTALL_DIR }}",
-                "ContentDir": "{{ ARCGIS_PORTAL_CONTENT_DIR }}"
+                "InstallDir": "{{ PORTAL_INSTALL_DIR }}",
+                "ContentDir": "{{ PORTAL_CONTENT_DIR }}"
             },
             "ContentDirectoryLocation":"{{ PORTAL_DATA_DIR }}",
             "EnableAutomaticAccountCreation": true,
@@ -142,7 +142,7 @@
             "Installer": {
                 "Path": "{{ BASE_DIR }}\\resources\\software\\ArcGIS_DataStore_Windows.exe",
                 "IsSelfExtracting": true,
-                "InstallDir": "{{ ARCGIS_DATASTORE_INSTALL_DIR }}",
+                "InstallDir": "{{ DATASTORE_INSTALL_DIR }}",
                 "InstallAllFeatures": false
             }
         },
