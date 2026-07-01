@@ -262,7 +262,7 @@ function Build-Docs {
         throw "zensical.exe not found in environment: $zensicalExe"
     }
 
-    & $zensicalExe build --clean -f (Join-Path $BaseDir 'config\docs\zensical.toml')
+    & $zensicalExe build --clean -f (Join-Path $BaseDir 'zensical.toml')
     if ($LASTEXITCODE -ne 0) {
         throw "Docs build failed with exit code $LASTEXITCODE."
     }

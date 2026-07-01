@@ -43,3 +43,6 @@ temp/
 
 # installation resources
 resources/
+
+# built documentation
+site/
