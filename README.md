@@ -38,7 +38,6 @@ It provides:
 Use the helper script any time you need to toggle secret file format:
 
 ```powershell
-cd C:\temp\install_115
 .\scripts\protect_secrets.ps1 -Mode Encrypt
 .\scripts\protect_secrets.ps1 -Mode Decrypt
 ```
